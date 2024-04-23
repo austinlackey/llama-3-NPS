@@ -11,7 +11,7 @@ class MLXChatModel (BaseChatModel) :
     mlx_path: str
     mlx_model: Any = Field(default = None, exclude = True)
     mlx_tokenizer: Any = Field(default = None, exclude = True)
-    max_tokens: int = Field(default = 250)
+    max_tokens: int = Field(default = 50)
 
     @property
     def _llm_type(self) -> str:
