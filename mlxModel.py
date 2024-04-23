@@ -31,7 +31,7 @@ class MLXChatModel (BaseChatModel) :
     
     def _generate(self, messages: List[BaseMessage], stop: Optional[List[str]]) -> ChatResult:
         prompt = '''
-        You are a helpful AI assistant that helps people with their problems.
+        You are a helpful AI assistant.
         
         '''
 
