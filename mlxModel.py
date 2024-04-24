@@ -11,7 +11,7 @@ class MLXChatModel (BaseChatModel) :
     mlx_path: str
     mlx_model: Any = Field(default = None, exclude = True)
     mlx_tokenizer: Any = Field(default = None, exclude = True)
-    max_tokens: int = Field(default = 50)
+    max_tokens: int = Field(default = 500)
 
     @property
     def _llm_type(self) -> str:
@@ -33,6 +33,7 @@ class MLXChatModel (BaseChatModel) :
         prompt = '''
         You are a helpful AI assistant.
         
+        Answer the question as concisely as possible.
         '''
 
         for message in messages:
