@@ -45,7 +45,7 @@ loss <- ggplot() +
     y = 'Loss') +
   scale_color_manual(values = c('Adapter 1' = pal3[1], 'Adapter 2' = pal3[2], 'Adapter 3' = pal3[3])) +
   guides(color = guide_legend(title = 'Models')) + 
-  theme(legend.position = "bottom", legend.direction = "vertical")
+  theme(legend.direction = "vertical")
 ggsave("Visuals/Loss.png", loss, width = 6, height = 4, dpi = 300)
 loss
 ```
