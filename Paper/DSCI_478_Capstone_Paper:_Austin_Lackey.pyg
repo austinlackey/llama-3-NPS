@@ -1,0 +1,45 @@
+// This is a C++ code
+#include<iostream>
+using namespace std;
+int main()
+{
+    cout << "Hello World!";
+}
+
+This is the methodology section of your paper.
+
+\section{Results}
+
+This is the results section of your paper.
+
+\section{Conclusion}
+\cite{dalle3}\cite{llama3}\cite{mlx-lm}
+This is the conclusion section of your paper.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+% \begin{thebibliography}{9}
+
+% \bibitem{llama3}
+% Meta. Llama-3-8B Base Transformer. \\\texttt{https://huggingface.co/meta-llama/Meta-Llama-3-8B}
+
+% \bibitem{mlx-lm}
+% Apple. MLX-LM. \\\texttt{https://github.com/ml-explore/mlx-examples/tree/main/lora}
+
+% % \bibitem{einstein}
+% % Albert Einstein.
+% % \textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German)
+% % [\textit{On the electrodynamics of moving bodies}].
+% % Annalen der Physik, 322(10):891–921, 1905.
+
+
+% \bibitem{dalle3}
+% OpenAI. DALL·E 3 Image Generation. Prompt: "Photorealistic version of a Llama with 4 legs wearing a park ranger vest and a park ranger hat wearing sunglasses"
+% \textit{DALL·E 3}.
+% 2024.
+% \end{thebibliography}
+
+
+
+\end{document}

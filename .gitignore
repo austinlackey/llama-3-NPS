@@ -1,4 +1,8 @@
 __pycache__/
 Quantized-Base-Models/
-Finetuned-LLama3-NPSv4/
+Finetuned-Models/
 .DS_Store
+.vscode/
+Data/
+TrainData/
+.Rhistory

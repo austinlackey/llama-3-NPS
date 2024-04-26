@@ -1,0 +1,29 @@
+\begin{thebibliography}{1}
+
+\bibitem{dettmers2023qlora}
+Tim Dettmers, Artidoro Pagnoni, Ari Holtzman, and Luke Zettlemoyer.
+\newblock Qlora: Efficient finetuning of quantized llms, 2023.
+
+\bibitem{wenqi}
+Wenqi Glantz.
+\newblock Democratizing llms: 4-bit quantization for optimal llm inference.
+\newblock {\em Towards Data Science}, 2024.
+
+\bibitem{mlx2023}
+Awni Hannun, Jagrit Digani, Angelos Katharopoulos, and Ronan Collobert.
+\newblock {MLX}: Efficient and flexible machine learning on apple silicon, 2023.
+
+\bibitem{hu2021lora}
+Edward~J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu~Wang, and Weizhu Chen.
+\newblock Lora: Low-rank adaptation of large language models, 2021.
+
+\bibitem{llama3}
+Meta.
+\newblock {Llama-3-8B} base model used for fine-tuning, 2024.
+
+\bibitem{dalle3}
+OpenAI.
+\newblock {DALL·E} 3: Prompt: "photorealistic version of a llama with 4 legs wearing a park ranger vest and a park ranger hat wearing sunglasses", 2024.
+\newblock This image was generated with the assistance of AI.
+
+\end{thebibliography}

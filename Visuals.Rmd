@@ -1,0 +1,95 @@
+```{r}
+library(tidyverse)
+```
+
+```{r}
+extract_loss <- function(string) {
+  string %>%
+    str_extract_all('Train loss [0-9]+\\.[0-9]+') %>%
+    unlist() %>%
+    str_extract('[0-9]+\\.[0-9]+') %>%
+    as.numeric()
+}
+# create dataframe with loss values, from 10 to 1000 in increments of 10
+create_df <- function(string) {
+  vals <- extract_loss(string)
+  iters <- seq(10, 10*length(vals), 10)
+  data.frame(iters, vals)
+}
+```
+
+```{r}
+adapter5 <- create_df(readLines("Metrics/Adapter5.txt"))
+adapter1 <- create_df(readLines("Metrics/Adapter1.txt"))
+adapter2 <- create_df(readLines("Metrics/Adapter2.txt"))
+```
+
+```{r}
+gg_color_hue <- function(n) {
+  hues = seq(15, 375, length = n + 1)
+  hcl(h = hues, l = 65, c = 100)[1:n]
+}
+pal3 <- gg_color_hue(3)
+```
+
+```{r}
+loss <- ggplot() +
+  geom_line(data = adapter1, aes(x = iters, y = vals, color = 'Adapter 1')) +
+  geom_line(data = adapter2, aes(x = iters, y = vals, color = 'Adapter 2')) +
+  geom_line(data = adapter5, aes(x = iters, y = vals, color = 'Adapter 3')) +
+  geom_smooth(data = adapter1, aes(x = iters, y = vals), color = pal3[1], se = FALSE, size = 0.2) +
+  geom_smooth(data = adapter2, aes(x = iters, y = vals), color = pal3[2], se = FALSE, size = 0.2) +
+  geom_smooth(data = adapter5, aes(x = iters, y = vals), color = pal3[3], se = FALSE, size = 0.2) +
+  labs(title = 'Training Loss Over Time',
+    x = 'Iterations',
+    y = 'Loss') +
+  scale_color_manual(values = c('Adapter 1' = pal3[1], 'Adapter 2' = pal3[2], 'Adapter 3' = pal3[3])) +
+  guides(color = guide_legend(title = 'Models')) + 
+  theme(legend.position = "bottom", legend.direction = "vertical")
+ggsave("Visuals/Loss.png", loss, width = 6, height = 4, dpi = 300)
+loss
+```
+
+```{r}
+# import csv 
+all_comments <- read_csv("Data/comments_with_prompts.csv")
+sampled_comments <- read_csv("TrainData/output.csv")
+```
+
+```{r}
+# histogram of comment lengths
+hist_all_comments <- ggplot(all_comments, aes(x = WordCount)) +
+  geom_histogram(binwidth = 2, fill = 'black', color = NA) +
+  geom_vline(aes(xintercept = median(WordCount)), color = 'red', size = 1) +
+  annotate("text", x = median(all_comments$WordCount)+30, y = 1850, label = paste0("Median: ", round(median(all_comments$WordCount), 2)), color = "red") +
+  labs(title = 'Distribution of Comment Lengths',
+    x = 'Word Count',
+    y = 'Frequency')
+ggsave("Visuals/AllCommentsHist.png", hist, width = 6, height = 4, dpi = 300)
+hist_all_comments
+```
+
+
+```{r}
+# Create a dataframe with this c("Base Model", "Quantized Model") and c(16.07, 4.53)
+quantized <- data.frame(Model = c("Base Model", "Quantized Model"), 
+                        Size = c(16.07, 4.53))
+# Make a bar plot
+bar_quantized <- ggplot(quantized, aes(x = Model, y = Size, fill = Model)) +
+  geom_bar(stat = "identity", width = 0.5) +
+  labs(title = 'Model Size Comparison',
+    x = 'Model',
+    y = 'Size (GB)') + 
+  theme(legend.position = "none")
+bar_quantized
+ggsave("Visuals/ModelSize.png", bar_quantized, width = 4, height = 4, dpi = 300)
+```
+
+
+```{r}
+parameters <- 8000000000
+bit32 <- 32
+bit8 <- 8
+print(parameters*bit32/8e9)
+print(parameters*bit8/8e9)
+```

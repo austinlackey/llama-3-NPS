@@ -1,0 +1,131 @@
+(main) austinlackey@Austins-MacBook-Pro-6 lora % python lora.py --model /Users/austinlackey/Documents/GitHub/llm-data-validation/Quantized-Base-Models/LLama3-8B-Q4 \
+               --train \
+               --data /Users/austinlackey/Documents/GitHub/llm-data-validation/TrainData \    
+               --iters 1000 \
+               --max-tokens 100 \
+               --temp 0.3 \
+               --batch-size 1 \
+               --lora-layers 4
+Loading pretrained model
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Total parameters 1255.379M
+Trainable parameters 0.426M
+Loading datasets
+Training
+Iter 1: Val loss 2.849, Val took 37.978s
+Iter 10: Train loss 2.792, It/sec 0.603, Tokens/sec 113.215
+Iter 20: Train loss 2.581, It/sec 0.552, Tokens/sec 104.321
+Iter 30: Train loss 2.104, It/sec 0.535, Tokens/sec 102.402
+Iter 40: Train loss 1.509, It/sec 0.535, Tokens/sec 103.318
+Iter 50: Train loss 1.184, It/sec 0.526, Tokens/sec 102.874
+Iter 60: Train loss 0.824, It/sec 0.546, Tokens/sec 103.905
+Iter 70: Train loss 0.704, It/sec 0.565, Tokens/sec 104.019
+Iter 80: Train loss 0.565, It/sec 0.557, Tokens/sec 105.182
+Iter 90: Train loss 0.551, It/sec 0.555, Tokens/sec 103.636
+Iter 100: Train loss 0.796, It/sec 0.465, Tokens/sec 106.252
+Iter 100: Saved adapter weights to adapters.npz.
+Iter 110: Train loss 0.647, It/sec 0.538, Tokens/sec 103.739
+Iter 120: Train loss 0.729, It/sec 0.482, Tokens/sec 106.179
+Iter 130: Train loss 0.644, It/sec 0.549, Tokens/sec 104.028
+Iter 140: Train loss 0.554, It/sec 0.555, Tokens/sec 106.727
+Iter 150: Train loss 0.629, It/sec 0.524, Tokens/sec 105.724
+Iter 160: Train loss 0.550, It/sec 0.549, Tokens/sec 103.229
+Iter 170: Train loss 0.546, It/sec 0.532, Tokens/sec 104.466
+Iter 180: Train loss 0.585, It/sec 0.549, Tokens/sec 105.085
+Iter 190: Train loss 0.481, It/sec 0.549, Tokens/sec 106.707
+Iter 200: Train loss 0.570, It/sec 0.556, Tokens/sec 105.235
+Iter 200: Val loss 0.633, Val took 37.780s
+Iter 200: Saved adapter weights to adapters.npz.
+Iter 210: Train loss 0.526, It/sec 0.565, Tokens/sec 105.851
+Iter 220: Train loss 0.545, It/sec 0.533, Tokens/sec 105.558
+Iter 230: Train loss 0.780, It/sec 0.505, Tokens/sec 103.621
+Iter 240: Train loss 0.621, It/sec 0.517, Tokens/sec 104.542
+Iter 250: Train loss 0.592, It/sec 0.548, Tokens/sec 105.269
+Iter 260: Train loss 0.633, It/sec 0.533, Tokens/sec 104.095
+Iter 270: Train loss 0.735, It/sec 0.504, Tokens/sec 104.749
+Iter 280: Train loss 0.609, It/sec 0.541, Tokens/sec 106.223
+Iter 290: Train loss 0.550, It/sec 0.512, Tokens/sec 102.930
+Iter 300: Train loss 0.634, It/sec 0.521, Tokens/sec 104.108
+Iter 300: Saved adapter weights to adapters.npz.
+Iter 310: Train loss 0.691, It/sec 0.508, Tokens/sec 105.790
+Iter 320: Train loss 0.585, It/sec 0.556, Tokens/sec 107.706
+Iter 330: Train loss 0.521, It/sec 0.567, Tokens/sec 103.557
+Iter 340: Train loss 0.720, It/sec 0.501, Tokens/sec 105.248
+Iter 350: Train loss 0.485, It/sec 0.533, Tokens/sec 102.814
+Iter 360: Train loss 0.667, It/sec 0.510, Tokens/sec 104.815
+Iter 370: Train loss 0.561, It/sec 0.555, Tokens/sec 105.308
+Iter 380: Train loss 0.470, It/sec 0.557, Tokens/sec 103.883
+Iter 390: Train loss 0.488, It/sec 0.556, Tokens/sec 104.521
+Iter 400: Train loss 0.572, It/sec 0.539, Tokens/sec 105.470
+Iter 400: Val loss 0.615, Val took 37.945s
+Iter 400: Saved adapter weights to adapters.npz.
+Iter 410: Train loss 0.810, It/sec 0.470, Tokens/sec 106.520
+Iter 420: Train loss 0.434, It/sec 0.557, Tokens/sec 103.827
+Iter 430: Train loss 0.502, It/sec 0.557, Tokens/sec 103.910
+Iter 440: Train loss 0.611, It/sec 0.539, Tokens/sec 106.927
+Iter 450: Train loss 0.472, It/sec 0.565, Tokens/sec 103.988
+Iter 460: Train loss 0.704, It/sec 0.507, Tokens/sec 104.397
+Iter 470: Train loss 0.536, It/sec 0.566, Tokens/sec 103.222
+Iter 480: Train loss 0.523, It/sec 0.557, Tokens/sec 103.669
+Iter 490: Train loss 0.493, It/sec 0.545, Tokens/sec 102.001
+Iter 500: Train loss 0.756, It/sec 0.483, Tokens/sec 103.121
+Iter 500: Saved adapter weights to adapters.npz.
+Iter 510: Train loss 0.493, It/sec 0.540, Tokens/sec 103.289
+Iter 520: Train loss 0.457, It/sec 0.561, Tokens/sec 103.211
+Iter 530: Train loss 0.538, It/sec 0.548, Tokens/sec 105.525
+Iter 540: Train loss 0.444, It/sec 0.557, Tokens/sec 102.822
+Iter 550: Train loss 0.424, It/sec 0.574, Tokens/sec 101.468
+Iter 560: Train loss 0.601, It/sec 0.549, Tokens/sec 104.267
+Iter 570: Train loss 0.556, It/sec 0.541, Tokens/sec 102.393
+Iter 580: Train loss 0.611, It/sec 0.514, Tokens/sec 104.058
+Iter 590: Train loss 0.646, It/sec 0.498, Tokens/sec 104.348
+Iter 600: Train loss 0.698, It/sec 0.530, Tokens/sec 106.168
+Iter 600: Val loss 0.602, Val took 37.966s
+Iter 600: Saved adapter weights to adapters.npz.
+Iter 610: Train loss 0.575, It/sec 0.534, Tokens/sec 103.661
+Iter 620: Train loss 0.485, It/sec 0.558, Tokens/sec 102.769
+Iter 630: Train loss 0.521, It/sec 0.505, Tokens/sec 103.011
+Iter 640: Train loss 0.527, It/sec 0.527, Tokens/sec 104.039
+Iter 650: Train loss 0.516, It/sec 0.533, Tokens/sec 104.338
+Iter 660: Train loss 0.439, It/sec 0.575, Tokens/sec 102.672
+Iter 670: Train loss 0.725, It/sec 0.498, Tokens/sec 104.925
+Iter 680: Train loss 0.623, It/sec 0.519, Tokens/sec 105.631
+Iter 690: Train loss 0.466, It/sec 0.549, Tokens/sec 104.410
+Iter 700: Train loss 0.309, It/sec 0.592, Tokens/sec 103.540
+Iter 700: Saved adapter weights to adapters.npz.
+Iter 710: Train loss 0.647, It/sec 0.481, Tokens/sec 104.589
+Iter 720: Train loss 0.450, It/sec 0.564, Tokens/sec 105.499
+Iter 730: Train loss 0.580, It/sec 0.491, Tokens/sec 103.241
+Iter 740: Train loss 0.521, It/sec 0.547, Tokens/sec 107.228
+Iter 750: Train loss 0.497, It/sec 0.539, Tokens/sec 105.205
+Iter 760: Train loss 0.498, It/sec 0.532, Tokens/sec 105.248
+Iter 770: Train loss 0.421, It/sec 0.584, Tokens/sec 104.509
+Iter 780: Train loss 0.494, It/sec 0.541, Tokens/sec 102.685
+Iter 790: Train loss 0.619, It/sec 0.531, Tokens/sec 108.007
+Iter 800: Train loss 0.538, It/sec 0.525, Tokens/sec 106.689
+Iter 800: Val loss 0.596, Val took 37.829s
+Iter 800: Saved adapter weights to adapters.npz.
+Iter 810: Train loss 0.532, It/sec 0.541, Tokens/sec 103.641
+Iter 820: Train loss 0.799, It/sec 0.484, Tokens/sec 104.427
+Iter 830: Train loss 0.469, It/sec 0.585, Tokens/sec 103.828
+Iter 840: Train loss 0.484, It/sec 0.550, Tokens/sec 104.271
+Iter 850: Train loss 0.410, It/sec 0.565, Tokens/sec 103.578
+Iter 860: Train loss 0.628, It/sec 0.540, Tokens/sec 105.212
+Iter 870: Train loss 0.477, It/sec 0.533, Tokens/sec 104.148
+Iter 880: Train loss 0.555, It/sec 0.519, Tokens/sec 103.912
+Iter 890: Train loss 0.603, It/sec 0.496, Tokens/sec 108.027
+Iter 900: Train loss 0.576, It/sec 0.540, Tokens/sec 104.754
+Iter 900: Saved adapter weights to adapters.npz.
+Iter 910: Train loss 0.806, It/sec 0.424, Tokens/sec 99.871
+Iter 920: Train loss 0.595, It/sec 0.564, Tokens/sec 107.755
+Iter 930: Train loss 0.618, It/sec 0.503, Tokens/sec 105.171
+Iter 940: Train loss 0.573, It/sec 0.532, Tokens/sec 105.410
+Iter 950: Train loss 0.634, It/sec 0.504, Tokens/sec 102.828
+Iter 960: Train loss 0.683, It/sec 0.503, Tokens/sec 100.261
+Iter 970: Train loss 0.724, It/sec 0.484, Tokens/sec 103.628
+Iter 980: Train loss 0.474, It/sec 0.531, Tokens/sec 102.247
+Iter 990: Train loss 0.665, It/sec 0.485, Tokens/sec 103.741
+Iter 1000: Train loss 0.529, It/sec 0.550, Tokens/sec 104.356
+Iter 1000: Val loss 0.593, Val took 38.480s
+Iter 1000: Saved adapter weights to adapters.npz.
+(main) austinlackey@Austins-MacBook-Pro-6 lora % 
