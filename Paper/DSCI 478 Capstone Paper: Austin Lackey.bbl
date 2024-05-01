@@ -26,4 +26,9 @@ OpenAI.
 \newblock {DALL·E} 3: Prompt: "photorealistic version of a llama with 4 legs wearing a park ranger vest and a park ranger hat wearing sunglasses", 2024.
 \newblock This image was generated with the assistance of AI.
 
+\bibitem{openaitokenizer}
+{OpenAI}.
+\newblock Tokenizer tool, 2024.
+\newblock Tokenizer example.
+
 \end{thebibliography}
