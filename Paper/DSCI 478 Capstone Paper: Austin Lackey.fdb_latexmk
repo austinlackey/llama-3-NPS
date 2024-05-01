@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex DSCI 478 Capstone Paper: Austin Lackey"] 1714469507 "DSCI 478 Capstone Paper: Austin Lackey.aux" "DSCI 478 Capstone Paper: Austin Lackey.bbl" "DSCI 478 Capstone Paper: Austin Lackey" 1714553277 0
+["bibtex DSCI 478 Capstone Paper: Austin Lackey"] 1714469507 "DSCI 478 Capstone Paper: Austin Lackey.aux" "DSCI 478 Capstone Paper: Austin Lackey.bbl" "DSCI 478 Capstone Paper: Austin Lackey" 1714554509 0
   "./references.bib" 1714456802 1785 a139292fbe84bd7e9cdcd55098d9be4f ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "DSCI 478 Capstone Paper: Austin Lackey.aux" 1714553276 2402 dcf19b097bd85ba708890b270cee84c2 "pdflatex"
+  "DSCI 478 Capstone Paper: Austin Lackey.aux" 1714554509 2402 dcf19b097bd85ba708890b270cee84c2 "pdflatex"
   (generated)
   "DSCI 478 Capstone Paper: Austin Lackey.bbl"
   "DSCI 478 Capstone Paper: Austin Lackey.blg"
   (rewritten before read)
-["pdflatex"] 1714553276 "DSCI 478 Capstone Paper: Austin Lackey.tex" "DSCI 478 Capstone Paper: Austin Lackey.pdf" "DSCI 478 Capstone Paper: Austin Lackey" 1714553277 0
+["pdflatex"] 1714554508 "DSCI 478 Capstone Paper: Austin Lackey.tex" "DSCI 478 Capstone Paper: Austin Lackey.pdf" "DSCI 478 Capstone Paper: Austin Lackey" 1714554509 0
   "../DALLE LLama.png" 1714081959 4882102 2caa9e32877fcdb6b57ef1d171fe0929 ""
   "../Visuals/Loss.png" 1714121022 169240 aafbc68026ba57a10a7c8ab7d0f744c7 ""
   "../Visuals/ModelSize.png" 1714120179 38068 596b53dafa4a8caef061b80c446f4516 ""
@@ -85,7 +85,7 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1696593134 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1696593086 7883455 3213e49428ab4bfa087dcf51b8d3ea8b ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "DSCI 478 Capstone Paper: Austin Lackey.aux" 1714553276 2402 dcf19b097bd85ba708890b270cee84c2 "pdflatex"
+  "DSCI 478 Capstone Paper: Austin Lackey.aux" 1714554509 2402 dcf19b097bd85ba708890b270cee84c2 "pdflatex"
   "DSCI 478 Capstone Paper: Austin Lackey.bbl" 1714469507 1160 2d9478f1820615f2a59807c7bcb04317 "bibtex DSCI 478 Capstone Paper: Austin Lackey"
   "DSCI 478 Capstone Paper: Austin Lackey.tex" 1714553275 16622 c21f86ec27c3b181e8b7b6b8cb162a40 ""
   (generated)
