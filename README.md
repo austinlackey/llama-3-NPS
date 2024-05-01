@@ -1,55 +1,73 @@
-# llm-data-validation
- 
-Let's create a GitHub README file for your project which includes the files `finetune.ipynb`, `main.ipynb`, and `Visuals.Rmd`. Here's a draft that you can use:
-
 ---
 
-# Project Title
+# Using Efficient Local Fine-tuning Techniques to Extract Closure Information From Long National Park Comments
 
 ## Overview
-Briefly describe what your project is about and its purpose.
+This repository contains the code, data, and paper for demonstrating the use of efficient local fine-tuning techniques to extract closure information from long national park comments. The project uses the Meta-Llama 3-8B model and the QLoRA fine-tuning technique to fine-tune the model on a dataset of national park comments. This codebase requires the cloning of the mlx repository for the fine-tuning scripts to utilize Apples CoreML framework for quantization and the QLoRA fine-tuning technique.
+
+For more information, please refer to the paper in this repository.
 
 ## Files
 In this repository, you will find the following files:
 
-- `main.ipynb`: Main script for the project. Contains the primary codebase to execute the project's functionality.
-- `finetune.ipynb`: This notebook is used for model fine-tuning and parameter adjustments to enhance the performance.
-- `Visuals.Rmd`: R Markdown document for generating visualizations. It includes code to visualize the data and results from the project.
+- `finetune.ipynb`: This notebook is used for formatting the data and fine-tuning the model. It also contains terminal commands at the end to train, run, and fuse the models.
+- `main.ipynb`: Main notebook for loading and testing the models.
+- `Visuals.Rmd`: R Markdown document for generating visualizations used in the paper. It includes code to visualize the data and results from the project.
 
-## Installation
+## Download Models and Repos
 
-Instructions on how to set up the project environment:
+Instructions on how to download, and run the models.
+
+```ptyhon
+# Download Llama directly from the Hugging Face model hub
+from transformers import AutoTokenizer, AutoModelForCausalLM
+
+tokenizer = AutoTokenizer.from_pretrained("meta-llama/Meta-Llama-3-8B")
+model = AutoModelForCausalLM.from_pretrained("meta-llama/Meta-Llama-3-8B")
+```
 
 ```bash
-# Clone the repo
-git clone [repo-url]
-cd [repo-directory]
-
-# Install dependencies
-pip install -r requirements.txt
+# Clone the mlx repository for the fine-tuning scripts
+git clone https://github.com/ml-explore/mlx-examples
 ```
 
 ## Usage
 
-How to run the project:
+Convert Model to Quantized Version:
 
 ```bash
-# For main functionality
-jupyter notebook main.ipynb
-
-# For fine-tuning the model
-jupyter notebook finetune.ipynb
-
-# For generating visualizations
-Rscript -e "rmarkdown::render('Visuals.Rmd')"
+# Quantize the model
+python convert.py --hf-path <path-to-full-model> -q --mlx-path <path-to-save-quantized-model>
 ```
 
-## Contributing
-Information on how others can contribute to the project. Include any rules for contributing, how to send pull requests, etc.
+Fine-tune and Test the Model:
 
-## License
-Specify the license under which your project is made available. (e.g., MIT, GPL, etc.)
+```bash
+# Fine-tune the model
+python lora.py --model <path-to-quantized-model> \
+               --train \
+               --data ../TrainData \
+               --iters 1000 \
+               --max-tokens 150 \
+               --temp 0.3 \
+               --batch-size 2 \
+               --lora-layers 16
+```
 
+```bash
+# Test the model
+python lora.py --model <path-to-quantized-model> \
+               --adapter-file ../Llama-3-adapters/adapters5.npz \
+               --max-tokens 100 \
+               --prompt "Input Prompt Here"
+```
+
+Fuse Final Adapter to Model:
+
+```bash
+# Fuse the final adapter to the model
+python fuse.py --model <path-to-quantized-model> \
+                --adapter-file ../Llama-3-adapters/adapters5.npz \
+                --save-path <path-to-save-fused-model>
+```
 ---
-
-Feel free to modify the text to better fit your project's specifics. If you need more details added or adjusted, let me know!
