@@ -23,7 +23,7 @@ The VU Statistics program within the National Park Service (NPS) is responsible 
 
 # Methodology
 My methodology for this project is explained in detail in the following 
-[Medium article]()
+[Medium article](https://austin-lackey.medium.com/fine-tuning-llama-3-8b-for-national-park-service-use-cases-a93eba881cf4)
 
 # I/O Example
 ![I/O Example](https://github.com/austinlackey/llama-3-NPS/blob/main/Visuals/OutputExample.png)
