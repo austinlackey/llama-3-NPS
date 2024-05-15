@@ -1,73 +1,30 @@
----
+<p align="center">
+    <img src="https://github.com/austinlackey/llama-3-NPS/blob/main/DALLE%20LLama.png" width="500">
+</p>
 
-# Using Efficient Local Fine-tuning Techniques to Extract Closure Information From Long National Park Comments
+# Fine-tuning Llama-3-8B for extracting information from NPS comments
 
-## Overview
-This repository contains the code, data, and paper for demonstrating the use of efficient local fine-tuning techniques to extract closure information from long national park comments. The project uses the Meta-Llama 3-8B model and the QLoRA fine-tuning technique to fine-tune the model on a dataset of national park comments. This codebase requires the cloning of the mlx repository for the fine-tuning scripts to utilize Apples CoreML framework for quantization and the QLoRA fine-tuning technique.
+### Technologies
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)
+![MicrosoftSQLServer](https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-For more information, please refer to the paper in this repository.
+# Motivation
+The VU Statistics program within the National Park Service (NPS) is responsible for maintaining and analyzing visitor data across the entire NPS system. All ~420 NPS units collect visitor data, and leave free-form comments that describe the visitation patterns for a given month. Going through these comments can be a time-consuming process, and LLMs have the nuance to understand the context of the comments and extract the information that is relevant to the VU Statistics program.
 
-## Files
-In this repository, you will find the following files:
+# :sparkles: Innovative Emphasis
+**LLMs often have a barrier to entry, either due to the computational resources required, or the money needed to access APIs. Both open-source models, and modern QLoRA techniques can be used to fine-tune LLMs for specific use-cases on the local level. This allows for the democratization of LLMs, and the ability to fine-tune a model that works best for National Park Service data.**
 
-- `finetune.ipynb`: This notebook is used for formatting the data and fine-tuning the model. It also contains terminal commands at the end to train, run, and fuse the models.
-- `main.ipynb`: Main notebook for loading and testing the models.
-- `Visuals.Rmd`: R Markdown document for generating visualizations used in the paper. It includes code to visualize the data and results from the project.
+# Methodology
+My methodology for this project is explained in detail in the following 
+[Medium article]()
 
-## Download Models and Repos
-
-Instructions on how to download, and run the models.
-
-```ptyhon
-# Download Llama directly from the Hugging Face model hub
-from transformers import AutoTokenizer, AutoModelForCausalLM
-
-tokenizer = AutoTokenizer.from_pretrained("meta-llama/Meta-Llama-3-8B")
-model = AutoModelForCausalLM.from_pretrained("meta-llama/Meta-Llama-3-8B")
-```
-
-```bash
-# Clone the mlx repository for the fine-tuning scripts
-git clone https://github.com/ml-explore/mlx-examples
-```
-
-## Usage
-
-Convert Model to Quantized Version:
-
-```bash
-# Quantize the model
-python convert.py --hf-path <path-to-full-model> -q --mlx-path <path-to-save-quantized-model>
-```
-
-Fine-tune and Test the Model:
-
-```bash
-# Fine-tune the model
-python lora.py --model <path-to-quantized-model> \
-               --train \
-               --data ../TrainData \
-               --iters 1000 \
-               --max-tokens 150 \
-               --temp 0.3 \
-               --batch-size 2 \
-               --lora-layers 16
-```
-
-```bash
-# Test the model
-python lora.py --model <path-to-quantized-model> \
-               --adapter-file ../Llama-3-adapters/adapters5.npz \
-               --max-tokens 100 \
-               --prompt "Input Prompt Here"
-```
-
-Fuse Final Adapter to Model:
-
-```bash
-# Fuse the final adapter to the model
-python fuse.py --model <path-to-quantized-model> \
-                --adapter-file ../Llama-3-adapters/adapters5.npz \
-                --save-path <path-to-save-fused-model>
-```
----
+# I/O Example
+![I/O Example](https://github.com/austinlackey/llama-3-NPS/blob/main/Visuals/OutputExample.png)
+Fine-tuning Llama-3-8B for extracting closure-related information from long/verbose NPS comments.
